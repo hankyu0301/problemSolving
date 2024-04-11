@@ -1,4 +1,4 @@
-package programmers;
+package programmers.문자열;
 
 public class 시저_암호 {
 
