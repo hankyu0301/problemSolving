@@ -1,23 +1,24 @@
 package programmers;
 
+import java.util.Arrays;
+
 public class 자연수_뒤집어_배열로_만들기 {
 
     public static void main(String[] args) {
-        System.out.println(solution(12345).toString());
+        System.out.println(Arrays.toString(solution(12345)));
     }
 
     public static int[] solution(long n) {
-        String a = "" + n;
-        int[] answer = new int[a.length()];
-        int cnt=0;
+        String str = String.valueOf(n); // "12345" -> [ '5', '4', '3', '2', '1' ]
+        int[] nums = new int[str.length()]; // [ '1','2','3','4','5' ]
+        int index = 0;
 
-        while(n>0) {
-            answer[cnt]=(int)(n%10);
-            n/=10;
-            System.out.println(n);
-            cnt++;
+        for(int i = str.length(); i>0; i--) {
+            nums[index] = str.charAt(i-1) - '0'; // 문자열을 int로 형변환하면 안돼.
+            index++;
         }
-        return answer;
+
+        return nums;
     }
 
 }
