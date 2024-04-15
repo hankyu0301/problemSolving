@@ -13,12 +13,12 @@ public class 삼진법_뒤집기 {
 
     public static int solution(int n) {
 
-        String ans = "";
+        StringBuilder sb = new StringBuilder();
         while(n != 0) {
-            ans += n%3;
+            sb.append(n%3);
             n /= 3;
         }
-        return Integer.parseInt(ans, 3);
+        return Integer.parseInt(sb.toString(), 3);
     }
 
 }
